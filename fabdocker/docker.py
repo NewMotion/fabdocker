@@ -103,11 +103,10 @@ class Docker(object):
         )
         return self(cmd, local)
 
-    def login(self, url, username, password, email, local=None):
-        cmd = "login -u {user} -p {password} -e {email} {url}".format(
+    def login(self, url, username, password, local=None):
+        cmd = "login -u {user} -p {password} {url}".format(
             user=username,
             password=password,
-            email=email,
             url=url
         )
         return self(cmd, local)
