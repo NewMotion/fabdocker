@@ -79,9 +79,8 @@ class Docker(object):
         result = self(cmd, local)
         return json.loads(result)
 
-    def tag(self, source_image, target_image, source_tag=None, target_tag=None, force=None, local=None):
-        cmd = "tag {force} {source_image}{source_tag} {target_image}{target_tag}".format(
-            force="-f" if force else "",
+    def tag(self, source_image, target_image, source_tag=None, target_tag=None, local=None):
+        cmd = "tag {source_image}{source_tag} {target_image}{target_tag}".format(
             source_image=source_image,
             source_tag=":{}".format(source_tag) if source_tag else "",
             target_image=target_image,
@@ -107,11 +106,10 @@ class Docker(object):
         )
         return self(cmd, local)
 
-    def login(self, url, username, password, email, local=None):
-        cmd = "login -u {user} -p {password} -e {email} {url}".format(
+    def login(self, url, username, password, local=None):
+        cmd = "login -u {user} -p {password} {url}".format(
             user=username,
             password=password,
-            email=email,
             url=url
         )
         return self(cmd, local)
