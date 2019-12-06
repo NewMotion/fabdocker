@@ -8,11 +8,11 @@ with open('requirements.txt') as f:
 
 setup(
     name='fabdocker',
-    version='0.4.0',
+    version='0.3.5',
     url='https://github.com/newmotion/fabdocker',
     license='MIT',
-    author='Daan Debie, Gertjan Assies',
-    author_email='debie.daan@gmail.com', 'gertjan.assies@gmail.com',
+    author='Daan Debie',
+    author_email='debie.daan@gmail.com',
     description='Deploy Docker containers with Fabric.',
     long_description='Deploy Docker containers with Fabric.',
     packages=find_packages(),
